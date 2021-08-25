@@ -1,5 +1,5 @@
 # Homework 1.1                      IsPrime.py
-# Version:                          v1.0.0
+# Version:                          v1.0.1
 # Completed by:                     Anthony Braden on 08/27/2021
 
 # (make an is prime function) Make a function for testing whether 

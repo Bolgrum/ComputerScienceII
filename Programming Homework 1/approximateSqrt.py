@@ -22,9 +22,12 @@
 # 
 # Write another code to demonstrate your function works.
 
+# Using a custom version of the program from:
+# https://www.koderdojo.com/blog/python-program-square-roots-babylonian-method#:~:text=The%20Babylonian%20Method%20states%20that,divided%20by%20the%20previous%20guess.
+
 import math
 lastGuess = 1
-epsilon = 0.001
+epsilon = 0.000001
 
 number = float(input("Calculate square root of? > "))
 
