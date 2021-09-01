@@ -147,7 +147,6 @@ def runMain():
         return chooseStory()
     pygame.mixer.music.stop()
     playStory(madLib)
-    runAgain()
     
 runMain()
     
