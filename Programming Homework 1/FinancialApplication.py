@@ -53,13 +53,13 @@ def printResults(futureValues):
     print(tabulate(futureValues, headers="firstrow", floatfmt='.2f', tablefmt='grid'))
 
 def runAgain():
-    startAgain = input("Would you like to calculate another investment (Y/N)? >")
+    startAgain = input("Would you like to calculate another investment (Y/N)? > ")
     if(startAgain.lower() == "y"):
         runMain()
     elif(startAgain.lower() == "n"):
         print("Thank you for using the Future Investment Calculator.")
         exit()
     else:
-        runAgain()
+        return runAgain()
         
 runMain()
