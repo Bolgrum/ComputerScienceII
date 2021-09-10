@@ -21,8 +21,6 @@ from gtts import gTTS
 import os
 import pygame
 
-
-
 def chooseStory():
     print("Which story will you choose?")
     print("(1) Spooky Stuff\n(2) The News\n(3) A Letter from George")
@@ -149,7 +147,6 @@ def runMain():
         return chooseStory()
     pygame.mixer.music.stop()
     playStory(madLib)
-    runAgain()
     
 runMain()
     
