@@ -26,19 +26,37 @@
 from GVDie import GVDie
 import random
 
-def roll_total(die, total):
-    total_value = 0
-    total_rolls = 0
-    while total_value < total:
+def rollTotal(die, total):
+    totalValue = 0
+    totalRolls = 0
+    while totalValue < total:
         die.roll()
-        total_value += die.my_value
-        total_rolls += 1
-    return total_rolls 
+        totalValue += die.myValue
+        totalRolls += 1
+    return totalRolls 
+
+def runAgain():
+    startAgain = input("Would you like to perform another calculation? (Y/N)? > ")
+    if(startAgain.lower() == "y"):
+        runMain()
+    elif(startAgain.lower() == "n"):
+        print("Exiting program.")
+        exit()
+    else:
+        return runAgain()
     
-if __name__ == "__main__":
+def runMain():
     die = GVDie()   
-    die.set_seed(15)   
-          
-    total = int(input())
-    rolls = roll_total(die, total) 
-    print(f'Number of rolls to reach at least {total}: {rolls}')
+    die.setSeed(random.randint(1, 264))   
+       
+    try:          
+        total = int(input('What total do you want to reach? > '))
+        rolls = rollTotal(die, total) 
+        print(f'Number of rolls to reach at least {total}: {rolls}')
+    except ValueError:
+        print('Please insert an integer.')
+        return runMain()
+    runAgain()
+            
+if __name__ == "__main__":
+    runMain()

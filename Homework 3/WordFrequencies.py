@@ -24,6 +24,20 @@
 # the dictionary sorted by key value.
 
 # The words parameter is a list of strings.
+import pygame
+
+def playMusic():
+    pygame.mixer.init()
+    pygame.mixer.music.load("Itty Bitty.wav")
+    pygame.mixer.music.play(-1)
+    
+def chooseMusic():
+    playMusic = input("Would you like to play music while you build your word frequency dictionary? (Y/N)? > ")
+    if(startAgain.lower() == "y"):
+        playMusic()
+    elif(playMusic.lower() != "y" or playMusic.lower() != "n"):
+        return runAgain()
+
 def gatherInput():
     print("Please input a list of words with a space separating individual words.\nWords are case-sensitive.")
     userInput = input().lower()
