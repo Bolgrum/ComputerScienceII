@@ -23,14 +23,57 @@
 # Mary 0
 # Stu 34
 
-parts = input().split()
-name = parts[0]
-while name != '-1':
-    try:
-        age = int(parts[1]) + 1
-    except:
-        age = 0
-    print(f'{name} {age}')
+def gatherInput(name, age):
+    parts = input('Please insert a name and age separated by a space: > ').split()
+    return parts
 
-    parts = input().split()
-    name = parts[0]
+def separateNameAge(name, age, parts):
+    i = 0
+    name.append(parts[i])
+    while i+1 != len(parts)-1:
+        name[len(name)-1] = name[len(name)-1] + ' ' + parts[i+1]
+        i += 1
+    age.append(int(parts[len(parts) - 1]) + 1)
+    
+def printResults(name, age):
+    for i in range(len(name)):
+        print(f'{name[i]} {age[i]}') 
+
+def printToFile(name, age):
+    printToFile = input("Would you like to export your list to a .csv file? (Y/N)? > ") 
+    if(printToFile.lower() == "y"):
+        fileName = input("Please insert file name: > ") + ".csv"
+        with open(fileName, 'a', newline='') as f:
+            for i in range(len(name)):
+                string = name[i] + ' ' + str(age[i]) + '\n'
+                f.write(string)
+    elif(printToFile.lower() == "n"):
+        pass
+    else:
+        return runAgain()    
+
+def runAgain():
+    startAgain = input("Would you like to fill another name/age list? (Y/N)? > ")
+    if(startAgain.lower() == "y"):
+        runMain()
+    elif(startAgain.lower() == "n"):
+        print("Exiting program.")
+        exit()
+    else:
+        return runAgain()
+
+def runMain():
+    name = []
+    age = []
+    parts = gatherInput(name, age)
+    while parts[0] != "-1":
+        separateNameAge(name, age, parts)
+        parts = gatherInput(name, age)
+    print(name)
+    print(age)
+    printResults(name, age)
+    printToFile(name, age)
+    runAgain()
+
+if __name__ == '__main__':    
+    runMain()

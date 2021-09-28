@@ -38,7 +38,7 @@ def rollDice():
     value = int(input("What integer would you like to roll? (1-6)> "))
     if value <= 6:
         rolls = rollingForPair(die1, die2, value)
-        if rolls == "1": 
+        if rolls == 1: 
             print(f'It took {rolls} roll to get a pair of {value}\'s.')
         else:
             print(f'It took {rolls} rolls to get a pair of {value}\'s.')

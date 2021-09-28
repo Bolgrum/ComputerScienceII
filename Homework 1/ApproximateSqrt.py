@@ -39,6 +39,6 @@ while True:
     lastGuess = nextGuess
 
 print("Using math.sqrt(number) produces:", math.sqrt(number))
-print("Using the Babylonian method produces", nextGuess)
+print("Using the Babylonian method produces", (nextGuess))
 print("Difference between math.sqrt and the Babylonian method's guess:", (math.sqrt(number) - nextGuess))
     

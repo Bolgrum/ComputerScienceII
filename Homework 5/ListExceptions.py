@@ -1,5 +1,5 @@
 # Homework 5.2                      ListExceptions.py
-# Version:                          v1.0.1
+# Version:                          v2.0.7
 # Completed by:                     Anthony Braden on 09/24/2021
 
 # 10.9 LAB: Exceptions with lists
@@ -11,7 +11,9 @@
 # the invalid index is negative or the last element if the invalid 
 # index is positive.
 #
-# Note: Python allows using a negative index to access a list, as long as the magnitude of the index is smaller than the size of the list.
+# Note: Python allows using a negative index to access a list, as 
+# long as the magnitude of the index is smaller than the size of 
+# the list.
 #
 # Ex: If the input of the program is:
 #

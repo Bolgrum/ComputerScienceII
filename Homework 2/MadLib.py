@@ -114,7 +114,7 @@ def collectForStoryThree():
               f"I am writing from {place}, where I have been secretly living for the past {number} years.\n" +
               f"I am concerned by the {adjective} state of affairs in America these days.\n" +
               f"It seems that your politicians are more concerned with {ing} one another than with listening to the {pluralNoun2} of the people.\n" +
-              f"When we declared our independence from {place2}, we set for on a {adjective2} path guided by the voices of the everyday {pluralNoun3}.\n" +
+              f"When we declared our independence from {place2}, we set for on a {adjective2} path guided by the voices of the everyday {pluralNoun2}.\n" +
               f"If we're going to keep {ing2}, then we need to learn how to respect all {pluralNoun3}.\n" +
               f"Don't get me wrong; we had {adjective3} problems in my day too.\n" +
               f"Benjamin Franklin once called me a {noun} and kicked me in the {bodyPart}.\n" +
