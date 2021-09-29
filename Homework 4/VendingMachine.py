@@ -22,7 +22,9 @@
 
 class VendingMachine:
     def __init__(self):
-        self.bottles = 20
+        file = open('inventory.txt', 'r')
+        contents = file.read()
+        self.bottles = int(contents)
         
     def purchase(self, amount):
         self.bottles = self.bottles - amount
@@ -30,16 +32,39 @@ class VendingMachine:
     def restock(self, amount):
         self.bottles = self.bottles + amount
     
-    def get_inventory(self):
+    def getInventory(self):
         return self.bottles
         
     def report(self):
+        with open('inventory.txt', 'w') as f:
+            f.write(str(self.bottles))
         print(f'Inventory: {self.bottles} bottles')
 
+def runAgain():
+    startAgain = input("Would you like to check stock or generate another report? (Y/N)? > ")
+    if(startAgain.lower() == "y"):
+        runMain()
+    elif(startAgain.lower() == "n"):
+        print("Exiting program.")
+        exit()
+    else:
+        return runAgain()
+
+def runMain():
+    drinkMachine = VendingMachine()
+    userChoice = input('Would you like to (A) check stock or (B) generate report? (A/B) > ')
+    if userChoice.lower() == 'a':
+        bottles = drinkMachine.getInventory()
+        print(bottles)
+    elif userChoice.lower() == 'b':
+        drinksToBuy = int(input('How many drinks have been bought? > '))
+        bottlesToStock = int(input('How many drinks have been stocked? > '))
+        drinkMachine.purchase(drinksToBuy)
+        drinkMachine.restock(bottlesToStock)
+        drinkMachine.report()
+    else:
+        return runMain()
+    runAgain()
+
 if __name__ == "__main__":
-    drink_machine = VendingMachine()
-    drinks_to_buy = int(input())
-    bottles_to_stock = int(input())
-    drink_machine.purchase(drinks_to_buy)
-    drink_machine.restock(bottles_to_stock)
-    drink_machine.report()
+    runMain()

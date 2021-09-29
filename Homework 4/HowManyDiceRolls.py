@@ -1,5 +1,5 @@
 # Homework 5.2                      HowManyDiceRolls.py
-# Version:                          v1.0.1
+# Version:                          v2.0.3
 # Completed by:                     Anthony Braden on 09/24/2021
 
 # 26.7 LAB: How many dice rolls?
